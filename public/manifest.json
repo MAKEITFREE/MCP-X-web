@@ -1,0 +1,20 @@
+{
+  "name": "MCP-X - 专业的MCP智能体平台",
+  "short_name": "MCP-X",
+  "description": "领先的Model Context Protocol智能体平台，提供丰富的MCP扩展和AI工具集成",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["productivity", "utilities", "developer"],
+  "lang": "zh-CN",
+  "keywords": ["MCP", "MCP-X", "Model Context Protocol", "AI智能体", "AI助手", "人工智能", "MCP扩展"]
+}

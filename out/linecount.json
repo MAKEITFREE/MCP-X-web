@@ -1,0 +1,364 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "d:\\mcpx-client\\mcp-x",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2025-05-20 11:16:54",
+            "filesum": 57,
+            "codesum": 16919,
+            "commentsum": 519,
+            "blanksum": 674,
+            "filelist": [
+                {
+                    "blank": 0,
+                    "code": 3,
+                    "comment": 0,
+                    "filename": ".bolt\\config.json"
+                },
+                {
+                    "blank": 3,
+                    "code": 4,
+                    "comment": 0,
+                    "filename": ".bolt\\prompt"
+                },
+                {
+                    "blank": 2,
+                    "code": 14,
+                    "comment": 9,
+                    "filename": ".gitignore"
+                },
+                {
+                    "filename": "dist.rar",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 8,
+                    "code": 215,
+                    "comment": 232,
+                    "filename": "dist\\assets\\index-BfJXwJim.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 1,
+                    "comment": 0,
+                    "filename": "dist\\assets\\index-CHulC0-U.css"
+                },
+                {
+                    "filename": "dist\\assets\\mcpx-Ds64BI4K.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "dist\\assets\\wechat-qrcode-DyOuAenp.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 0,
+                    "code": 17,
+                    "comment": 0,
+                    "filename": "dist\\index.html"
+                },
+                {
+                    "blank": 1,
+                    "code": 27,
+                    "comment": 0,
+                    "filename": "eslint.config.js"
+                },
+                {
+                    "blank": 0,
+                    "code": 16,
+                    "comment": 0,
+                    "filename": "index.html"
+                },
+                {
+                    "blank": 79,
+                    "code": 7067,
+                    "comment": 0,
+                    "filename": "package-lock.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 44,
+                    "comment": 0,
+                    "filename": "package.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 6,
+                    "comment": 0,
+                    "filename": "postcss.config.js"
+                },
+                {
+                    "blank": 1,
+                    "code": 28,
+                    "comment": 0,
+                    "filename": "requirements.txt"
+                },
+                {
+                    "blank": 2,
+                    "code": 41,
+                    "comment": 0,
+                    "filename": "src\\App.tsx"
+                },
+                {
+                    "filename": "src\\assets\\wechat-qrcode.jpg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 7,
+                    "code": 93,
+                    "comment": 0,
+                    "filename": "src\\components\\layout\\Footer.tsx"
+                },
+                {
+                    "blank": 13,
+                    "code": 192,
+                    "comment": 16,
+                    "filename": "src\\components\\layout\\Navbar.tsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "src\\components\\ui\\Badge.tsx"
+                },
+                {
+                    "blank": 6,
+                    "code": 74,
+                    "comment": 1,
+                    "filename": "src\\components\\ui\\CategorySection.tsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 12,
+                    "comment": 0,
+                    "filename": "src\\components\\ui\\Logo.tsx"
+                },
+                {
+                    "filename": "src\\components\\ui\\mcpx.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 5,
+                    "code": 54,
+                    "comment": 1,
+                    "filename": "src\\components\\ui\\SearchBar.tsx"
+                },
+                {
+                    "blank": 7,
+                    "code": 40,
+                    "comment": 5,
+                    "filename": "src\\components\\ui\\ServerCard.tsx"
+                },
+                {
+                    "blank": 2,
+                    "code": 13,
+                    "comment": 0,
+                    "filename": "src\\components\\ui\\UsageBadge.tsx"
+                },
+                {
+                    "blank": 1,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\components\\ui\\VerifiedBadge.tsx"
+                },
+                {
+                    "blank": 3,
+                    "code": 9,
+                    "comment": 3,
+                    "filename": "src\\config\\index.ts"
+                },
+                {
+                    "blank": 205,
+                    "code": 5846,
+                    "comment": 1,
+                    "filename": "src\\data\\servers.ts"
+                },
+                {
+                    "blank": 14,
+                    "code": 71,
+                    "comment": 16,
+                    "filename": "src\\data\\servers_api.ts"
+                },
+                {
+                    "blank": 13,
+                    "code": 51,
+                    "comment": 4,
+                    "filename": "src\\index.css"
+                },
+                {
+                    "blank": 1,
+                    "code": 10,
+                    "comment": 0,
+                    "filename": "src\\main.tsx"
+                },
+                {
+                    "blank": 8,
+                    "code": 54,
+                    "comment": 0,
+                    "filename": "src\\pages\\AboutPage.tsx"
+                },
+                {
+                    "blank": 17,
+                    "code": 150,
+                    "comment": 1,
+                    "filename": "src\\pages\\AddServerPage.tsx"
+                },
+                {
+                    "blank": 9,
+                    "code": 107,
+                    "comment": 3,
+                    "filename": "src\\pages\\CareersPage.tsx"
+                },
+                {
+                    "blank": 14,
+                    "code": 146,
+                    "comment": 0,
+                    "filename": "src\\pages\\ContactPage.tsx"
+                },
+                {
+                    "blank": 13,
+                    "code": 221,
+                    "comment": 2,
+                    "filename": "src\\pages\\DownloadPage.tsx"
+                },
+                {
+                    "blank": 17,
+                    "code": 191,
+                    "comment": 11,
+                    "filename": "src\\pages\\HomePage.tsx"
+                },
+                {
+                    "blank": 11,
+                    "code": 131,
+                    "comment": 1,
+                    "filename": "src\\pages\\LoginPage.tsx"
+                },
+                {
+                    "blank": 15,
+                    "code": 167,
+                    "comment": 0,
+                    "filename": "src\\pages\\PricingPage.tsx"
+                },
+                {
+                    "blank": 9,
+                    "code": 83,
+                    "comment": 0,
+                    "filename": "src\\pages\\PrivacyPage.tsx"
+                },
+                {
+                    "blank": 63,
+                    "code": 627,
+                    "comment": 26,
+                    "filename": "src\\pages\\ServerDetailPage.tsx"
+                },
+                {
+                    "blank": 28,
+                    "code": 237,
+                    "comment": 127,
+                    "filename": "src\\pages\\SettingsPage.tsx"
+                },
+                {
+                    "blank": 15,
+                    "code": 199,
+                    "comment": 1,
+                    "filename": "src\\pages\\SignupPage.tsx"
+                },
+                {
+                    "blank": 10,
+                    "code": 82,
+                    "comment": 0,
+                    "filename": "src\\pages\\TermsPage.tsx"
+                },
+                {
+                    "blank": 28,
+                    "code": 168,
+                    "comment": 39,
+                    "filename": "src\\services\\api.ts"
+                },
+                {
+                    "blank": 19,
+                    "code": 110,
+                    "comment": 0,
+                    "filename": "src\\styles\\markdown.css"
+                },
+                {
+                    "blank": 0,
+                    "code": 9,
+                    "comment": 0,
+                    "filename": "src\\types\\global.d.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 49,
+                    "comment": 0,
+                    "filename": "src\\types\\index.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 11,
+                    "comment": 0,
+                    "filename": "src\\utils\\jsencrypt.js.d.ts"
+                },
+                {
+                    "blank": 8,
+                    "code": 19,
+                    "comment": 7,
+                    "filename": "src\\utils\\jsencrypt.ts"
+                },
+                {
+                    "blank": 2,
+                    "code": 6,
+                    "comment": 2,
+                    "filename": "src\\vite-env.d.ts"
+                },
+                {
+                    "blank": 1,
+                    "code": 94,
+                    "comment": 1,
+                    "filename": "tailwind.config.js"
+                },
+                {
+                    "blank": 2,
+                    "code": 20,
+                    "comment": 2,
+                    "filename": "tsconfig.app.json"
+                },
+                {
+                    "blank": 0,
+                    "code": 7,
+                    "comment": 0,
+                    "filename": "tsconfig.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 18,
+                    "comment": 2,
+                    "filename": "tsconfig.node.json"
+                },
+                {
+                    "blank": 2,
+                    "code": 31,
+                    "comment": 6,
+                    "filename": "vite.config.ts"
+                }
+            ]
+        }
+    ]
+}

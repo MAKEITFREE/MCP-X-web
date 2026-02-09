@@ -1,0 +1,231 @@
+{
+  "code": 200,
+  "msg": "操作成功",
+  "data": [
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 13,
+      "name": "编程",
+      "nameEn": "programming",
+      "sortOrder": 1,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 14:50:55",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 2,
+      "name": "职业",
+      "nameEn": "career",
+      "sortOrder": 2,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 3,
+      "name": "文案",
+      "nameEn": "copywriting",
+      "sortOrder": 2,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 5,
+      "name": "教育",
+      "nameEn": "education",
+      "sortOrder": 3,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 1,
+      "name": "学术",
+      "nameEn": "academic",
+      "sortOrder": 4,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 14,
+      "name": "翻译",
+      "nameEn": "translation",
+      "sortOrder": 5,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 14:50:55",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 6,
+      "name": "情感",
+      "nameEn": "emotion",
+      "sortOrder": 6,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 11,
+      "name": "商业",
+      "nameEn": "business",
+      "sortOrder": 6,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 4,
+      "name": "设计",
+      "nameEn": "design",
+      "sortOrder": 7,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 14:50:55",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 8,
+      "name": "游戏",
+      "nameEn": "gaming",
+      "sortOrder": 8,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 10,
+      "name": "生活",
+      "nameEn": "lifestyle",
+      "sortOrder": 8,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 7,
+      "name": "娱乐",
+      "nameEn": "entertainment",
+      "sortOrder": 9,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 14:50:55",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 9,
+      "name": "通用",
+      "nameEn": "general",
+      "sortOrder": 9,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 15:47:34",
+      "updateBy": null,
+      "updateTime": "2025-07-03 15:47:34",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 80,
+      "name": "专业服务",
+      "nameEn": "professional",
+      "sortOrder": 10,
+      "status": 1
+    },
+    {
+      "createBy": null,
+      "createTime": "2025-07-03 14:24:37",
+      "updateBy": null,
+      "updateTime": "2025-07-03 14:50:55",
+      "remark": null,
+      "params": {
+        "@type": "java.util.HashMap"
+      },
+      "id": 12,
+      "name": "办公",
+      "nameEn": "office",
+      "sortOrder": 12,
+      "status": 1
+    }
+  ]
+}

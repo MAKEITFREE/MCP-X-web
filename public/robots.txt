@@ -1,0 +1,46 @@
+User-agent: *
+Allow: /
+
+# 优先抓取的页面
+Allow: /agents
+Allow: /chat
+Allow: /servers
+Allow: /pricing
+Allow: /about
+Allow: /download
+
+# 不需要搜索引擎抓取的页面
+Disallow: /settings
+Disallow: /balance
+Disallow: /order
+Disallow: /mobile-chat
+Disallow: /login
+Disallow: /signup
+Disallow: /forgot-password
+
+# 静态资源目录
+Allow: /assets/
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.webp$
+Allow: /*.svg$
+
+# 网站地图
+Sitemap: https://www.mcp-x.com/sitemap.xml
+
+# 特定搜索引擎优化
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+# 爬虫访问频率限制
+Crawl-delay: 1
