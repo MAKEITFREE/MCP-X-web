@@ -292,4 +292,10 @@ MCP 服务配置支持多种传输方式：
 
 如有问题或建议，请通过以下方式联系：
 - 提交 Issue
-- 发送邮件至项目维护者
+- 发送邮件至：ganyizhi@timecyber.com.cn
+- 加入微信交流群：
+
+<div align="center">
+  <img src="./public/images/wechat-group-qrcode.jpg" alt="微信交流群" width="300"/>
+  <p>扫码加入 MCP-X 技术交流群</p>
+</div>
