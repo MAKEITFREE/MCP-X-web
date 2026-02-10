@@ -3598,7 +3598,6 @@ const ImageEditorPage: React.FC = () => {
           // 播放/暂停处理函数
           const handlePlayPause = (e: React.MouseEvent) => {
             e.stopPropagation();
-            e.preventDefault();
             
             // 从最新的 elements 状态中获取视频元素
             const currentVideoEl = elements.find(item => item.id === videoEl.id) as VideoElement | undefined;
@@ -3686,35 +3685,44 @@ const ImageEditorPage: React.FC = () => {
           
           return (
             <div key={`video-container-${videoEl.id}`}>
-              {/* 悬停检测区域 - 覆盖整个视频 */}
+              {/* 悬停检测区域 - 覆盖整个视频，用于显示播放按钮 */}
               <div
-                className="absolute pointer-events-auto"
+                className="absolute"
                 style={{
                   left: videoScreenX,
                   top: videoScreenY,
                   width: videoScreenWidth,
                   height: videoScreenHeight,
-                  zIndex: 9,
+                  zIndex: 5,
+                  pointerEvents: 'none', // 不阻止鼠标事件，让事件传递到下层canvas
                 }}
                 onMouseEnter={() => setHoveredVideoId(videoEl.id)}
                 onMouseLeave={() => setHoveredVideoId(null)}
               />
               
-              {/* 播放/暂停按钮 */}
+              {/* 播放/暂停按钮 - 只在需要时显示，不阻止视频选中 */}
               {shouldShowButton && (
                 <button
-                  className="absolute z-10 flex items-center justify-center rounded-full bg-white/90 hover:bg-white shadow-lg hover:scale-110 pointer-events-auto"
+                  className="absolute flex items-center justify-center rounded-full bg-white/90 hover:bg-white shadow-lg hover:scale-110"
                   style={{
                     left: screenX,
                     top: screenY,
                     width: Math.max(buttonSize, 28),
                     height: Math.max(buttonSize, 28),
+                    zIndex: 6,
                     transition: 'transform 0.15s, background-color 0.15s, opacity 0.2s',
                     opacity: videoEl.isPlaying ? 0.9 : 1,
+                    pointerEvents: 'auto', // 只有按钮本身可以接收事件
                   }}
-                  onMouseDown={(e) => e.stopPropagation()}
+                  onMouseDown={(e) => {
+                    // 只阻止冒泡，不阻止默认行为
+                    e.stopPropagation();
+                  }}
                   onMouseEnter={() => setHoveredVideoId(videoEl.id)}
-                  onClick={handlePlayPause}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handlePlayPause(e);
+                  }}
                   title={videoEl.isPlaying ? '暂停' : '播放'}
                 >
                   {videoEl.isPlaying ? (
