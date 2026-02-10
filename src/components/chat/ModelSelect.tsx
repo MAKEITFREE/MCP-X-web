@@ -42,8 +42,8 @@ export const ModelSelect: React.FC<ModelSelectProps> = ({
       </button>
 
       {isOpen && (
-        <div className="absolute z-10 top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg">
-          <ul className="py-1">
+        <div className="absolute z-10 top-full left-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg max-h-[400px] overflow-hidden flex flex-col">
+          <ul className="py-1 overflow-y-auto flex-1">
             {models.map(model => (
               <li key={model.id}>
                 <button

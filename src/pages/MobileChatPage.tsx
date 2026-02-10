@@ -1310,6 +1310,18 @@ const MobileChatPageContent: React.FC = () => {
   const fetchingHistoryRef = useRef<Record<string, boolean>>({});
   const chatHistorySidebarRef = useRef<any>(null);
   
+  // 用于追踪会话创建状态，防止重复创建
+  const creatingSessionRef = useRef<Promise<string> | null>(null);
+  // 本地存储新创建的会话ID，在URL更新前使用
+  const [localSessionId, setLocalSessionId] = useState<string | null>(null);
+  
+  // 当 URL 中的 sessionId 变化时，清除本地会话ID
+  useEffect(() => {
+    if (sessionId) {
+      setLocalSessionId(null);
+    }
+  }, [sessionId]);
+
   // 生成基于机器特征的唯一用户ID（数字类型）- 持久稳定
   const generateMachineUserId = () => getPersistentMachineUserId();
   
@@ -1850,12 +1862,20 @@ const MobileChatPageContent: React.FC = () => {
       return machineId;
     })();
 
-    let currentSessionId = sessionId;
+    let currentSessionId = sessionId || localSessionId;
 
-    // 如果没有sessionId，创建新会话
-    if (!sessionId) {
-      // 登录状态使用 /system/session；未登录使用 /web/session
+    // 如果当前正在创建会话，等待它完成
+    if (!currentSessionId && creatingSessionRef.current) {
       try {
+        currentSessionId = await creatingSessionRef.current;
+      } catch (error) {
+        console.error('等待会话创建失败:', error);
+      }
+    }
+
+    // 如果仍没有sessionId，创建新会话
+    if (!currentSessionId) {
+      const createSessionPromise = (async () => {
         const isLoggedIn = !!localStorage.getItem('token');
         const payload = {
           userId: currentUserId.toString(),
@@ -1868,20 +1888,32 @@ const MobileChatPageContent: React.FC = () => {
           : await chatApi.createWebSession(payload);
 
         if (sessionResponse.code === 200 && sessionResponse.data) {
-          currentSessionId = sessionResponse.data.toString();
-          navigate(`/mobile-chat/${currentSessionId}${selectedAgentId ? `?agent=${selectedAgentId}` : ''}`);
-          setCurrentSession(currentSessionId!);
-          // 本地先插入新会话，确保侧边栏立即可见
-          upsertSessionLocally(currentSessionId!, payload.sessionTitle, new Date().toISOString());
+          const newId = sessionResponse.data.toString();
+          setLocalSessionId(newId);
+          
+          // 在后台执行导航和上下文设置，不阻塞消息发送
+          setTimeout(() => {
+            navigate(`/mobile-chat/${newId}${selectedAgentId ? `?agent=${selectedAgentId}` : ''}`);
+            setCurrentSession(newId);
+            upsertSessionLocally(newId, payload.sessionTitle, new Date().toISOString());
+          }, 0);
+          
+          return newId;
         } else {
-          toast.error('创建会话失败');
-          return;
+          throw new Error('创建会话失败');
         }
+      })();
+
+      creatingSessionRef.current = createSessionPromise;
+      try {
+        currentSessionId = await createSessionPromise;
       } catch (error) {
-        console.error('创建会话失败:', error);
+        console.error('创建会话错误:', error);
         toast.error('创建会话失败');
+        creatingSessionRef.current = null;
         return;
       }
+      creatingSessionRef.current = null;
     }
 
     // 生成消息ID
@@ -2042,6 +2074,8 @@ const MobileChatPageContent: React.FC = () => {
   // 新建对话：立即创建会话并跳转对应ID（未登录走 /web/session，已登录走 /system/session）
   const handleNewChat = async () => {
     try {
+      setLocalSessionId(null);
+      creatingSessionRef.current = null;
       const isLoggedIn = !!localStorage.getItem('token');
       const title = currentLanguage === 'zh' ? '新的对话' : 'New Chat';
       const payload = {
@@ -2117,7 +2151,7 @@ const MobileChatPageContent: React.FC = () => {
     }
   };
 
-  const currentSessionId = sessionId || state.currentSessionId;
+  const currentSessionId = sessionId || localSessionId || state.currentSessionId;
   const currentMessages = currentSessionId ? state.chatMap[currentSessionId] || [] : [];
 
   return (
