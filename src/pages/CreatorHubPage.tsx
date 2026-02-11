@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { 
-  MessageSquare, 
-  Image, 
-  Video, 
-  Globe, 
-  Compass, 
+import {
+  MessageSquare,
+  Image,
+  Video,
+  Globe,
+  Compass,
   Bot,
   ChevronDown,
   Upload,
@@ -16,7 +16,8 @@ import {
   RatioIcon,
   Eye,
   Play,
-  Loader2
+  Loader2,
+  Clock
 } from 'lucide-react';
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
@@ -450,6 +451,7 @@ export const CreatorHubPage: React.FC = () => {
   // 视频/图片分辨率和比例
   const [videoResolution, setVideoResolution] = useState<'1K' | '2K' | '4K'>('1K');
   const [videoRatio, setVideoRatio] = useState<'16:9' | '9:16' | '1:1'>('16:9');
+  const [videoDuration, setVideoDuration] = useState<'5秒' | '10秒' | '15秒'>('5秒');
   const [imageResolution, setImageResolution] = useState<'1K' | '2K' | '4K'>('1K');
   const [imageRatio, setImageRatio] = useState<'16:9' | '9:16' | '1:1' | '4:3' | '3:4'>('1:1');
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -618,7 +620,11 @@ export const CreatorHubPage: React.FC = () => {
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files;
     if (files) {
-      const newImages = Array.from(files).filter(f => f.type.startsWith('image/'));
+      const newImages = Array.from(files).filter(f =>
+        f.type.startsWith('image/') &&
+        !f.name.toLowerCase().endsWith('.lnk') &&
+        !f.name.toLowerCase().endsWith('.url')
+      );
       setUploadedImages(prev => [...prev, ...newImages].slice(0, 4)); // 最多4张
     }
     if (fileInputRef.current) {
@@ -629,7 +635,9 @@ export const CreatorHubPage: React.FC = () => {
   // 处理视频首帧图上传
   const handleFirstFrameUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file && file.type.startsWith('image/')) {
+    if (file && file.type.startsWith('image/') &&
+        !file.name.toLowerCase().endsWith('.lnk') &&
+        !file.name.toLowerCase().endsWith('.url')) {
       setVideoFirstFrame(file);
     }
     if (firstFrameInputRef.current) {
@@ -640,7 +648,9 @@ export const CreatorHubPage: React.FC = () => {
   // 处理视频尾帧图上传
   const handleLastFrameUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file && file.type.startsWith('image/')) {
+    if (file && file.type.startsWith('image/') &&
+        !file.name.toLowerCase().endsWith('.lnk') &&
+        !file.name.toLowerCase().endsWith('.url')) {
       setVideoLastFrame(file);
     }
     if (lastFrameInputRef.current) {
@@ -719,16 +729,29 @@ export const CreatorHubPage: React.FC = () => {
             setIsLoading(false);
             return;
           }
-          // 跳转到视频工作室，传递首帧图和尾帧图
-          navigate('/video-studio', { 
-            state: { 
+          // 获取当前选中的模型信息
+          const currentModel = models.find(m => m.id === selectedModel);
+
+          // 转换分辨率格式
+          const resolutionMap: { [key: string]: '480P' | '720P' | '1080P' } = {
+            '1K': '480P',
+            '2K': '720P',
+            '4K': '1080P'
+          };
+
+          // 跳转到图片编辑器，传递首帧图和尾帧图用于视频生成
+          navigate('/image-editor', {
+            state: {
               initialPrompt: prompt.trim(),
               firstFrameImage: videoFirstFrame,
               lastFrameImage: videoLastFrame,
-              resolution: videoResolution,
+              model: currentModel?.modelName || selectedModel,
+              size: resolutionMap[videoResolution] || '720P',
               ratio: videoRatio,
+              duration: videoDuration,
+              mode: 'video', // 标记为视频模式
               autoSubmit: true // 标记为自动提交
-            } 
+            }
           });
           break;
         
@@ -919,7 +942,7 @@ export const CreatorHubPage: React.FC = () => {
                   <input
                     ref={fileInputRef}
                     type="file"
-                    accept="image/*"
+                    accept="image/png,image/jpeg,image/jpg,image/gif,image/bmp,image/webp,image/svg+xml"
                     multiple
                     onChange={handleImageUpload}
                     className="hidden"
@@ -940,14 +963,14 @@ export const CreatorHubPage: React.FC = () => {
                   <input
                     ref={firstFrameInputRef}
                     type="file"
-                    accept="image/*"
+                    accept="image/png,image/jpeg,image/jpg,image/gif,image/bmp,image/webp,image/svg+xml"
                     onChange={handleFirstFrameUpload}
                     className="hidden"
                   />
                   <input
                     ref={lastFrameInputRef}
                     type="file"
-                    accept="image/*"
+                    accept="image/png,image/jpeg,image/jpg,image/gif,image/bmp,image/webp,image/svg+xml"
                     onChange={handleLastFrameUpload}
                     className="hidden"
                   />
@@ -1052,6 +1075,20 @@ export const CreatorHubPage: React.FC = () => {
                       onChange={(v) => setVideoRatio(v as '16:9' | '9:16' | '1:1')}
                       icon={<RatioIcon className="w-4 h-4 lg:w-5 lg:h-5" />}
                       title={currentLanguage === 'zh' ? '选择比例' : 'Select Ratio'}
+                      iconColor="text-pink-400"
+                      disabled={isLoading}
+                    />
+                    {/* 时长选择 */}
+                    <DropdownSelector
+                      options={[
+                        { value: '5秒', label: currentLanguage === 'zh' ? '5秒' : '5 seconds', description: currentLanguage === 'zh' ? '超短视频' : 'Ultra short' },
+                        { value: '10秒', label: currentLanguage === 'zh' ? '10秒' : '10 seconds', description: currentLanguage === 'zh' ? '短视频' : 'Short video' },
+                        { value: '15秒', label: currentLanguage === 'zh' ? '15秒' : '15 seconds', description: currentLanguage === 'zh' ? '中等视频' : 'Medium video' }
+                      ]}
+                      value={videoDuration}
+                      onChange={(v) => setVideoDuration(v as '5秒' | '10秒' | '15秒')}
+                      icon={<Clock className="w-4 h-4 lg:w-5 lg:h-5" />}
+                      title={currentLanguage === 'zh' ? '选择时长' : 'Select Duration'}
                       iconColor="text-pink-400"
                       disabled={isLoading}
                     />
@@ -1459,7 +1496,15 @@ export const CreatorHubPage: React.FC = () => {
                         )}
                       </div>
                       <div className="flex-1 bg-gray-900/50 rounded-lg p-4 text-gray-300 whitespace-pre-wrap overflow-y-auto">
-                        {selectedShowcase.generatedResult}
+                        {selectedShowcase.generatedResult && /^https?:\/\/.*\.(jpg|jpeg|png|gif|bmp|webp|svg)/i.test(selectedShowcase.generatedResult) ? (
+                          <img
+                            src={selectedShowcase.generatedResult}
+                            alt="Generated content"
+                            className="max-w-full h-auto rounded"
+                          />
+                        ) : (
+                          selectedShowcase.generatedResult
+                        )}
                       </div>
                     </div>
                   )}
@@ -1737,10 +1782,14 @@ export const CreatorHubPage: React.FC = () => {
                         
                         navigate('/image-editor', { state: stateData });
                       } else if (selectedShowcase.contentType === 'video') {
-                        // 视频类型保持自动提交
-                        navigate('/video-studio', { 
+                        // 跳转到图片编辑器，执行视频生成
+                        navigate('/image-editor', { 
                           state: { 
                             initialPrompt: prompt,
+                            mode: 'video',
+                            size: '720P',
+                            ratio: '16:9',
+                            duration: '5秒',
                             autoSubmit: true
                           } 
                         });
