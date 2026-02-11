@@ -449,7 +449,7 @@ export const CreatorHubPage: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showModeDropdown, setShowModeDropdown] = useState(false);
   // 视频/图片分辨率和比例
-  const [videoResolution, setVideoResolution] = useState<'1K' | '2K' | '4K'>('1K');
+  const [videoResolution, setVideoResolution] = useState<'1K' | '2K' | '4K'>('2K');
   const [videoRatio, setVideoRatio] = useState<'16:9' | '9:16' | '1:1'>('16:9');
   const [videoDuration, setVideoDuration] = useState<'5秒' | '10秒' | '15秒'>('5秒');
   const [imageResolution, setImageResolution] = useState<'1K' | '2K' | '4K'>('1K');
@@ -1053,9 +1053,9 @@ export const CreatorHubPage: React.FC = () => {
                     {/* 分辨率选择 */}
                     <DropdownSelector
                       options={[
-                        { value: '1K', label: '1K (720P)', description: '1280×720' },
-                        { value: '2K', label: '2K (1080P)', description: '1920×1080' },
-                        { value: '4K', label: '4K (2160P)', description: '3840×2160' }
+                        { value: '1K', label: '1K (480P)', description: '720×480' },
+                        { value: '2K', label: '2K (720P)', description: '1280×720' },
+                        { value: '4K', label: '4K (1080P)', description: '1920×1080' }
                       ]}
                       value={videoResolution}
                       onChange={(v) => setVideoResolution(v as '1K' | '2K' | '4K')}
