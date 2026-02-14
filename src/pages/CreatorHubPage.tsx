@@ -1211,7 +1211,7 @@ export const CreatorHubPage: React.FC = () => {
         <div className="w-full max-w-4xl xl:max-w-5xl 2xl:max-w-6xl mt-16 lg:mt-20">
           <div className="flex items-center justify-between mb-8 gap-4">
             <h2 className="text-2xl lg:text-3xl font-bold text-white">
-              {currentLanguage === 'zh' ? '精选作品' : 'Featured Works'}
+              {currentLanguage === 'zh' ? 'AIGC开源社区' : 'AIGC Community'}
             </h2>
             
             {/* 搜索框 */}

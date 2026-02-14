@@ -268,11 +268,17 @@ src/
 
 ## 🔧 配置说明
 
-### 环境变量
-在 `.env.local` 中配置：
-```
-VITE_API_BASE_URL=你的API地址
-VITE_STATIC_BASE_URL=静态资源地址
+### 链接地址配置
+在 `src/config/index.ts` 文件中修改链接地址：
+
+```typescript
+// 修改API基础URL
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.PROD ? 'https://www.mcp-x.com/prod-api' : 'https://www.mcp-x.com/prod-api');
+
+// 修改静态资源基础URL
+const staticBaseUrl = import.meta.env.VITE_STATIC_BASE_URL ||
+  (import.meta.env.PROD ? '/prod-api/static' : '/static');
 ```
 
 ### MCP 配置

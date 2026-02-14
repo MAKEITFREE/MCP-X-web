@@ -268,11 +268,17 @@ src/
 
 ## 🔧 Configuration
 
-### Environment Variables
-Configure in `.env.local`:
-```
-VITE_API_BASE_URL=Your API address
-VITE_STATIC_BASE_URL=Static resource address
+### Link Configuration
+Modify link addresses in the `src/config/index.ts` file:
+
+```typescript
+// Modify API base URL
+const apiBaseUrl = import.meta.env.VITE_API_BASE_URL ||
+  (import.meta.env.PROD ? 'https://www.mcp-x.com/prod-api' : 'https://www.mcp-x.com/prod-api');
+
+// Modify static resource base URL
+const staticBaseUrl = import.meta.env.VITE_STATIC_BASE_URL ||
+  (import.meta.env.PROD ? '/prod-api/static' : '/static');
 ```
 
 ### MCP Configuration
