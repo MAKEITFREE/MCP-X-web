@@ -64,6 +64,14 @@ MCP-X is an **enterprise-grade AI agent development platform** that integrates A
 
 ---
 
+## 🎨 Latest Updates
+
+### v0.1.1 New Features
+- **🎬 Graphics Workbench Reference Video Generation**: Support @ symbol to reference images on canvas for video generation, currently only supports Alibaba Qwen model
+- **✨ Comprehensive UI Optimization**: Enhanced user experience with optimized visual design and interaction flow
+
+---
+
 ## 🌟 Core Features
 
 ### 1. MCP-X Video Studio (AI Video Studio)
@@ -102,6 +110,7 @@ Supports mainstream Chinese models: Qwen, Seed, etc., and international models: 
 - **Local Editing**: Mask support for local area editing
 - **Multi-Model Selection**: Support for various image generation models
 - **Image-to-Video**: Generate dynamic videos from images with multiple resolution and duration options
+- **Reference Video Generation**: Support @ symbol to reference images on canvas for video generation, currently only supports Alibaba Qwen model
 
 ### 5. MCP Service Marketplace
 - **Service Discovery**: Browse and search MCP services
@@ -119,7 +128,7 @@ Supports mainstream Chinese models: Qwen, Seed, etc., and international models: 
 | 🔧 **MCP Marketplace** | MCP tool collection and aggregation, with thousands of MCP tools integrated, expanding AI capability boundaries |
 | 🔧 **Agent Marketplace** | Agent collection and aggregation, with 500+ common agents integrated for vertical agent conversations |
 | 💻 **AI Code Generation** | Conversational frontend development with real-time preview, supporting React/Vue/HTML frameworks |
-| 🖼️ **Professional Image Processing** | Text-to-image, image-to-image, local editing, multiple models available for various creative needs |
+| 🖼️ **Professional Image Processing** | Text-to-image, image-to-image, local editing, @ symbol reference video generation, multiple models available for various creative needs |
 | 📚 **Enterprise Knowledge Base** | Private knowledge base management, intelligent document parsing, RAG-enhanced retrieval support |
 | 💰 **Membership Billing** | Pay-as-you-go + subscription packages, supporting membership billing and WeChat recharge |
 | 🌍 **Multi-Language Support** | Chinese and English bilingual interface, AI output supports multiple languages |
@@ -176,6 +185,7 @@ Supports mainstream Chinese models: Qwen, Seed, etc., and international models: 
 - Multi-model selection
 - Image size settings
 - Image-to-video
+- @ Symbol reference video generation (Alibaba Qwen model)
 
 ### Application Building
 - Create application
@@ -326,3 +336,41 @@ For questions or suggestions, please contact us through:
   <img src="./public/images/wechat-group-qrcode.jpg" alt="WeChat Group" width="300"/>
   <p>Scan to join MCP-X Technical Exchange Group</p>
 </div>
+
+---
+
+## 🚀 Backend Open Source Plan
+
+**Backend Code Status**: Currently being organized, expected to be open-sourced soon
+
+**Open Source Conditions**: This project reaches **1000 stars** ⭐ on GitHub, and over 300 real developers join the enterprise WeChat group, the backend code will be open-sourced simultaneously
+
+**Backend Tech Stack**:
+- Spring Boot 3.x
+- MySQL 8.0
+- Redis
+- Docker & Kubernetes
+- AI Model Integration (Alibaba Qwen, Jimeng, etc.)
+
+**Support Us**:
+- ⭐ Give us a star on GitHub
+- 🔄 Share the project to tech communities
+- 💬 Participate in discussions and contribute code
+
+**Goal**: 1000 ⭐ = Complete Open Source! We look forward to your support! 🎉
+
+---
+
+## 📜 Intellectual Property Declaration
+
+⚠️ **Important Notice**: This project has been registered for software copyright with relevant authorities, MCP-X is a registered trademark, please respect intellectual property rights.
+
+**Copyright Declaration**:
+- This project adopts Apache License 2.0 open source protocol
+- All trademarks and copyrights are reserved
+- Commercial use requires authorization
+
+**Trademark Protection**:
+- MCP-X is a registered trademark
+- Unauthorized commercial use is prohibited, legal action will be taken
+- Respect intellectual property rights and jointly maintain the open source ecosystem
